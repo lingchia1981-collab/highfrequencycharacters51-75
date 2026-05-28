@@ -94,7 +94,8 @@
         input[type=range] { width: 90px; cursor: pointer; }
         .slider-label { font-size: 10px; color: var(--primary-color); font-weight: bold; }
 
-        .back-pinyin-main { font-size: 22px; color: #7f8c8d; font-family: Arial; font-weight: bold; text-align: center; white-space: pre-line; line-height: 1.4; }
+        /* 確保生字拼音不會呈現斜體 */
+        .back-pinyin-main { font-size: 22px; color: #7f8c8d; font-family: Arial; font-weight: bold; text-align: center; white-space: pre-line; line-height: 1.4; font-style: normal; }
         .back-meaning { font-size: 22px; color: var(--stroke-main); font-weight: bold; text-align: center; }
 
         .sentence-box {
@@ -105,7 +106,8 @@
         }
         .s-english { font-size: 13px; color: #7f8c8d; font-style: italic; }
         .s-chinese { font-size: 17px; color: #333; font-weight: bold; line-height: 1.3; }
-        .s-pinyin { font-size: 13px; color: #444; line-height: 1.2; }
+        /* 確保例句拼音不會呈現斜體 */
+        .s-pinyin { font-size: 13px; color: #444; line-height: 1.2; font-style: normal; }
         
         .sentence-item { display: flex; flex-direction: column; gap: 2px; margin-bottom: 6px; }
         .sentence-item:last-child { margin-bottom: 0; }
@@ -180,18 +182,18 @@
             { w: '後', p: 'hòu', sim: '后', pos: '方位詞', m: 'behind / after', s: ['我家後面有一座山。'], sp: ['Wǒ jiā hòumiàn yǒu yī zuò shān.'], t: ['There is a mountain behind my house.'] },
             { w: '長', p: 'cháng / zhǎng', sim: '长', pos: '形容詞/動詞', m: 'long / grow', s: ['這條路很長。', '我的弟弟長高了。'], sp: ['Zhè tiáo lù hěn cháng.', 'Wǒ de dìdi zhǎng gāo le.'], t: ['This road is very long.', 'My younger brother grew taller.'] },
             { w: '都', p: 'dōu\ndū', sim: '都', pos: '副詞/名詞', m: 'all / city', s: ['我們都去吃飯。', '他喜歡住在都市。'], sp: ['Wǒmen dōu qù chīfàn.', 'Tā xǐhuān zhù zài dūshì.'], t: ['We are all going to eat.', 'He likes living in the city.'] },
-            { w: '分', p: 'fēn', sim: '分', pos: '名詞/動詞', m: 'minute / divide', s: ['現在是三點十分。'], sp: ['Xiànzài三 sān diǎn shí fēn.'], t: ['It is ten past three now.'] },
+            { w: '分', p: 'fēn', sim: '分', pos: '名詞/動詞', m: 'minute / divide', s: ['現在是三點十分。'], sp: ['Xiànzài sān diǎn shí fēn.'], t: ['It is ten past three now.'] },
             { w: '很', p: 'hěn', sim: '很', pos: '副詞', m: 'very', s: ['天氣很好。'], sp: ['Tiānqì hěn hǎo.'], t: ['The weather is very good.'] },
-            { w: '老', p: 'lǎo', sim: '老', pos: '形容詞', m: 'old', s: ['他是我的老朋友。'], sp: ['Tā是 wǒ de lǎo péngyǒu.'], t: ['He is my old friend.'] },
+            { w: '老', p: 'lǎo', sim: '老', pos: '形容詞', m: 'old', s: ['他是我的老朋友。'], sp: ['Tā shì wǒ de lǎo péngyǒu.'], t: ['He is my old friend.'] },
             { w: '動', p: 'dòng', sim: '动', pos: '動詞', m: 'move', s: ['不要動我的書。'], sp: ['Bùyào dòng wǒ de shū.'], t: ['Don\'t move my book.'] },
             { w: '起', p: 'qǐ', sim: '起', pos: '動詞', m: 'rise / start', s: ['我們一起出去玩吧!'], sp: ['Wǒmen yīqǐ chūqù wán ba!'], t: ['Let\'s go out to play together!'] },
-            { w: '物', p: 'wù', sim: '物', pos: '名詞', m: 'thing / object', s: ['這是什麼動物？'], sp: ['Zhè局 shì shénme dòngwù?'], t: ['What animal is this?'] },
+            { w: '物', p: 'wù', sim: '物', pos: '名詞', m: 'thing / object', s: ['這是什麼動物？'], sp: ['Zhè shì shénme dòngwù?'], t: ['What animal is this?'] },
             { w: '公', p: 'gōng', sim: '公', pos: '名詞', m: 'public', s: ['我去公園玩。'], sp: ['Wǒ qù gōngyuán wán.'], t: ['I am going to the park.'] },
             { w: '水', p: 'shuǐ', sim: '水', pos: '名詞', m: 'water', s: ['請喝一杯水。'], sp: ['Qǐng hē yī bēi shuǐ.'] , t: ['Please drink a glass of water.'] },
             { w: '什', p: 'shén', sim: '什', pos: '代詞', m: 'what', s: ['你在說什麼？'], sp: ['Nǐ zài shuō shénme?'], t: ['What are you saying?'] },
             { w: '心', p: 'xīn', sim: '心', pos: '名詞', m: 'heart', s: ['他很開心。'], sp: ['Tā hěn kāixīn.'], t: ['He is very happy.'] },
             { w: '把', p: 'bǎ', sim: '把', pos: '介詞', m: 'handle / (ba particle)', s: ['我把水喝完了。'], sp: ['Wǒ bǎ shuǐ hē wán le.'], t: ['I drank up the water.'] },
-            { w: '面', p: 'miàn', sim: '面', pos: '名詞', m: 'side / surface', s: ['請走到我的前面。'], sp: ['Qǐng zǒu dào wǒ de qiánmiàn.'], t: ['請走到我的前面 翻譯英文'] },
+            { w: '面', p: 'miàn', sim: '面', pos: '名詞', m: 'side / surface', s: ['請走到我的前面。'], sp: ['Qǐng zǒu dào wǒ de qiánmiàn.'], t: ['Please walk to the front of me.'] },
             { w: '做', p: 'zuò', sim: '做', pos: '動詞', m: 'do / make', s: ['你在做什麼？'], sp: ['Nǐ zài zuò shénme?'], t: ['What are you doing?'] },
             { w: '方', p: 'fāng', sim: '方', pos: '名詞', m: 'direction / method', s: ['我有一個好方法。'], sp: ['Wǒ yǒu yīgè hǎo fāngfǎ.'], t: ['I have a good method.'] },
             { w: '那', p: 'nà', sim: '那', pos: '代詞', m: 'that', s: ['那是什麼？'], sp: ['Nà shì shénme?'], t: ['What is that?'] },
@@ -202,8 +204,8 @@
             { w: '所', p: 'suǒ', sim: '所', pos: '名詞', m: 'place / all', s: ['我所有的同學都是台灣人。'], sp: ['Wǒ suǒyǒu de tóngxué dōu Táiwānrén.'], t: ['All of my classmates are Taiwanese.'] }
         ];
 
-        // 僅保留「能」與「起」使用雄哥網頁
-        const xiongWords = ['能', '起']; 
+        // 已修正：將「長」加入到雄哥網頁的支援清單中
+        const xiongWords = ['能', '起', '長']; 
         let currentIndex = 0;
         let writer;
         let currentSpeed = 1.0;
